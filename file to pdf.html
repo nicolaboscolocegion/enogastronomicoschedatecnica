@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <!--<script src="https://unpkg.com/jspdf-autotable@3.5.22/dist/jspdf.plugin.autotable.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.min.js"></script>
+        -->
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.0/jspdf.min.js" integrity="sha512-BXxMEipuROQVQQINS02Jc/I9nsnrifMPpWvwrJ2J/jMArQoqvVW8CgNQzJeJHVgg+X5SmbdMjIKSA4Fk01JzRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.22/jspdf.plugin.autotable.js" integrity="sha512-3QG6xTKwQ+Gj16++ggVRGrg0pZbC5/u131WyV3Pg/C9JMIKubrs1SbeloGdT5tpx+fVVV1jjkuo+dzbbF080hw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+    </head>
+    <body>
+        <form name="invio-dati" method="post">
+            <p><input name="titolo" id="titolo"></p>
+            <p><input name="nome" id="nome"></p>
+            <p><input name="telefono" placeholder="telefono" id="telefono"></p>
+            <p><input name="mail" placeholder="email" id="email"></p>
+            <p><input name="sesso" type="radio" value="maschio" checked> maschio
+               <input name="sesso" type="radio" value="femmina"> femmina
+            </p>
+           <p>
+            <br>
+            <input name="attrezzo" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1"> I have a bike</label><br>
+            <input name="attrezzo" type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+            <label for="vehicle2"> I have a car</label><br>
+            <input name="attrezzo" type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+            <label for="vehicle3"> I have a boat</label>
+            <br>
+         <textarea id="messaggio" name="messaggio" rows="5" cols="50" placeholder="inserisci un messaggio"></textarea></p>
+            <p><button onclick ="creaPdf()" type = "button">Crea PDF</button>
+            </p>
+
+            <label for="tempo_preparazione">Tempo di preparazione:</label>
+            <input type="time" id="t_prep" neme="t_prep" de>
+
+         </form>
+
+         <script type="text/javascript">
+           
+            
+
+            function creaPdf() {
+                applyPlugin(jsPDF);
+                var doc = new jsPDF();
+                var nome = document.getElementById("nome").value;
+                var tel = document.getElementById("telefono").value;
+                var email = document.getElementById("email").value;
+                var titolo = document.getElementById("titolo").value;
+                
+                var radioSet = document.getElementsByName('sesso');
+                var attrezzi = document.getElementsByName('attrezzo');
+
+                console.log(attrezzi.length);
+
+                for(var i=0; i<attrezzi.length; i++){
+                    console.log(attrezzi[i].value+"\n");
+                    console.log(attrezzi[i].checked+"\n");
+
+                }
+            
+                var numeroRadio = radioSet.length;
+                for( var i = 0; i < numeroRadio; i++ ){
+                    if( radioSet[i].checked ){
+                    var sesso=radioSet[i].value;
+                    break;
+                    }
+                }
+                
+                var tempo = document.getElementById('t_prep').value;
+                console.log('il tempo è' + tempo);
+
+                var messaggio = document.getElementById("messaggio").value;
+                
+                var host = "http://"+window.location.hostname;
+                  
+                var pageHeight = doc.internal.pageSize.height || doc.internal.pageSize.getHeight();
+                var pageWidth = doc.internal.pageSize.width || doc.internal.pageSize.getWidth();
+
+                var options = new Map();
+
+                //options.set(align, 'center');
+
+                doc.text(20, 20, 'Questo file è stato generato da: ' + host);
+                
+                
+                doc.setFont('Times');
+                doc.setFontType('normal');
+                doc.text(pageWidth / 2, 30, 'Utente: ' + nome, {align: 'center'});
+                doc.text(20, 40, 'Telefono: ' + tel, {align: 'left'});
+                doc.text(20, 50, 'Email: ' + email);
+                doc.text(20, 60, 'Sesso: ' + sesso);
+                doc.addPage();
+                doc.text(20, 20, 'Il messaggio: '+ messaggio);
+                
+                doc.autoTable({
+                    head: [['Name', 'Email', email]],
+                    body: [
+                      ['carlo', 'david@example.com\n ciao', 'Sweden'],
+                      ['Castille', 'castille@example.com', 'Spain'],
+                      //
+                    ]
+                  });
+                
+            
+                // Save the PDF
+                doc.save("prova");
+            
+            
+            }
+        </script>
+
+    </body>
+</html>
