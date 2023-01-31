@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <!--<script src="https://unpkg.com/jspdf-autotable@3.5.22/dist/jspdf.plugin.autotable.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.min.js"></script>
+        -->
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.0/jspdf.min.js" integrity="sha512-BXxMEipuROQVQQINS02Jc/I9nsnrifMPpWvwrJ2J/jMArQoqvVW8CgNQzJeJHVgg+X5SmbdMjIKSA4Fk01JzRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.22/jspdf.plugin.autotable.js" integrity="sha512-3QG6xTKwQ+Gj16++ggVRGrg0pZbC5/u131WyV3Pg/C9JMIKubrs1SbeloGdT5tpx+fVVV1jjkuo+dzbbF080hw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+    </head>
+    <body>
+
+        <h1>scheda tecnica</h1>
+        <form name="invio-dati" method="post">
+            
+            <p>
+                <label for="nome_piatto">Nome del piatto:</label><!--nome del piatto-->
+                <input name="Nome piatto" id="nome_piatto">
+            </p>
+            <p>
+                <label for="descrizione">Descrizione del piatto:</label><br><br><!--descrizione del piatto-->
+                <textarea id="drescizione" name="descrizione" rows="5" cols="50" placeholder="Inserisci la descrizione del piatto"></textarea>
+            </p>
+                
+            <p>
+                <label for="strumento">Strumenti necceessari alla preparazione:</label><br><!--qui ci va una tabella-->
+
+                <input name="strumento" type="checkbox" id="pentola" value="pentola">
+                <label for="pentola">pentola</label>
+                
+                <input name="strumento" type="checkbox" id="mestolo" value="mestolo">
+                <label for="mestolo">mestolo</label><br>
+
+                <input name="strumento" type="checkbox" id="padella" value="padella">
+                <label for="padella">padella</label>
+
+                <input name="strumento" type="checkbox" id="forno" value="forno">
+                <label for="forno">forno</label>
+
+            </p>
+            <p>
+                <label for="tempo_preparazione">Tempo di preparazione:</label>
+                <input type="time" id="t_prep" neme="t_prep">
+            </p>
+            
+
+
+            <p><button onclick ="creaPdf()" type = "button">Crea PDF</button>
+            </p>
+        </form>
+
+         <script type="text/javascript">
+           
+            
+
+            function creaPdf() {
+                applyPlugin(jsPDF);
+                var doc = new jsPDF();
+                
+        
+                var nome = document.getElementById('nome_piatto').value;
+                var descrizione = document.getElementById('drescizione').value;
+                var strumenti = document.getElementsByName('strumento');
+                var t_prep = document.getElementById('t_prep').value;
+
+                
+                var l_strumenti = '';
+                
+
+                for(var i = 0; i<strumenti.length; i++){
+                    if(strumenti[i].checked==true){
+                        l_strumenti = l_strumenti + strumenti[i].value;
+                        l_strumenti = l_strumenti + ' ';
+                    }
+                }
+
+                //console.log(strumenti[0].value);
+                console.log(l_strumenti);
+
+                //console.log(nome + descrizione + strumenti + l_strumenti + t_prep);
+                
+                var pageHeight = doc.internal.pageSize.height || doc.internal.pageSize.getHeight();
+                var pageWidth = doc.internal.pageSize.width || doc.internal.pageSize.getWidth();
+
+                doc.text(pageWidth / 2, 10, 'Scheda tecnica' + nome, {align: 'center'});
+
+                doc.autoTable({
+                    startY: 20, //altezza a cui la tabella inizia
+
+                    body: [
+                        
+                        ['Nome piatto', nome],
+                        [{content: 'descrizione del piatto', styles: {minCellHeight: 100}}, descrizione],
+                        ['strumenti per la preparazione',l_strumenti],
+                        ['tempo preparazione', t_prep],
+                    ],
+
+                    columnStyles: { //stile delle colonne
+                        0: {cellWidth: 50},
+                        1: {cellWidth: 'auto'},
+                    },
+
+                });
+                
+            
+                
+                // Save the PDF
+                doc.save("prova");
+            
+            
+            }
+        </script>
+
+    </body>
+</html>
