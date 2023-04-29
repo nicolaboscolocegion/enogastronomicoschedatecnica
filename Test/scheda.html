@@ -1,0 +1,267 @@
+<html>
+<head>
+
+</head>
+<body>
+       <h1>Scheda Tecnica</h1>
+        <form name="invio-dati" method="post" action="tabella.php">
+            
+            <p>
+                <label for="nome_piatto">Nome del piatto:</label>
+                <input name="Nome_piatto" id="nome_piatto">
+            </p>
+			
+			<p>
+                <label for="t_prep">Tempo di preparazione:</label>
+                <input type="time" id="t_prep" neme="t_prep">
+            </p>
+            
+			<p>
+                <label for="Pax">Pax:</label><br><br>
+                <textarea id="Pax" name="Pax" placeholder="Inserisci la quantita di piatti serviti"></textarea>
+            </p>
+			
+			<p>
+                <label for="descrizione">Descrizione del piatto:</label><br><br>
+                <textarea id="drescizione" name="descrizione" placeholder="Inserisci la descrizione del piatto"></textarea>
+            </p>
+						
+			<p>
+                <label for="Classificazione">Classificazione del piatto:</label><br><br>
+                <textarea id="Classificazione" name="Classificazione" placeholder="Inserisci la classificazione del piatto"></textarea>
+            </p>
+			
+			<p>
+                <label for="Allergeni">Allergeni:</label><br><br>
+                <textarea id="Allergeni" name="Allergeni" placeholder="Inserisci gli allergeni del piatto"></textarea>
+            </p>
+			
+			<p>
+                <label for="Ingredienti">Ingredienti del piatto:</label><br><br>
+                <textarea id="Ingredienti" name="Ingredienti" placeholder="Inserisci gli ingredienti del piatto"></textarea>
+            </p>
+		     
+        <p>
+            <label for="strumento">Strumenti necessari alla preparazione:</label><br><!--tabella strumenti-->
+
+			<table>
+				<tr>
+					<td>
+						
+					<input name="strumento" type="checkbox" id="Taglieri" value="Taglieri">
+					<label for="Taglieri">Taglieri</label>
+					
+					</td>
+					<td>
+					
+				
+					<input name="strumento" type="checkbox" id="Coltelli" value="Coltelli">
+					<label for="Coltelli">Coltelli</label>
+					
+					</td>
+					<td>
+						
+					<input name="strumento" type="checkbox" id="Mestolo" value="Mestolo">
+					<label for="Mestolo">Mestolo</label>
+					
+					</td>
+				</tr>
+				<tr>
+					<td>
+					
+					<input name="strumento" type="checkbox" id="Frusta" value="Frusta">
+					<label for="Frusta">Frusta</label>
+					
+					</td>
+					<td>
+
+
+					<input name="strumento" type="checkbox" id="Bilancia" value="Bilancia">
+					<label for="Bilancia">Bilancia</label>
+					
+					</td>
+					<td>	
+
+					<input name="strumento" type="checkbox" id="Bicchiere graduato" value="Bicchiere graduato">
+					<label for="Bicchiere graduato">Bicchiere graduato</label>
+					
+					</td>
+				</tr>
+				<tr>
+					<td>
+					
+					<input name="strumento" type="checkbox" id="Colino" value="Colino">
+					<label for="Colino">Colino</label>
+
+					</td>
+					<td>
+
+					<input name="strumento" type="checkbox" id="Scolapasta" value="Scolapasta">
+					<label for="Scolapasta">Scolapasta</label>
+
+					</td>
+					<td>
+					<input name="strumento" type="checkbox" id="Pelaverdure" value="Pelaverdure">
+					<label for="Pelaverdure">Pelaverdure</label>
+
+					</td>
+				</tr>
+				<tr>
+					<td>
+					
+					<input name="strumento" type="checkbox" id="Schiacciapatate" value="Schiacciapatate">
+					<label for="Schiacciapatate">Schiacciapatate</label>
+		
+					</td>
+					<td>
+					<input name="strumento" type="checkbox" id="Grattugia" value="Grattugia">
+					<label for="Grattugia">Grattugia</label>
+
+					</td>
+					<td>
+					<input name="strumento" type="checkbox" id="Batticarne" value="Batticarne">
+					<label for="Batticarne">Batticarne</label>
+
+					</td>
+				</tr>
+				<tr>
+					<td>
+					
+					<input name="strumento" type="checkbox" id="Matterello" value="Matterello">
+					<label for="Matterello">Matterello</label>
+
+					</td>
+					<td>
+
+					<input name="strumento" type="checkbox" id="Torcione" value="Torcione">
+					<label for="Torcione">Torcione</label>
+
+					</td>
+					<td>
+					<input name="strumento" type="checkbox" id="Leccapentole" value="Leccapentole">
+					<label for="Leccapentole">Leccapentole</label>
+
+					</td>
+				</tr>
+				<tr>
+					<td>
+					
+					<input name="strumento" type="checkbox" id="Forbici" value="Forbici">
+					<label for="Forbici">Forbici</label>
+
+					</td>
+					<td>
+					<input name="strumento" type="checkbox" id="Spremiagrumi" value="Spremiagrumi">
+					<label for="Spremiagrumi">Spremiagrumi</label>
+
+					</td>
+					<td>
+					<input name="strumento" type="checkbox" id="Pestello" value="Pestello">
+					<label for="Pestello">Pestello</label>
+
+					</td>
+				</tr>
+				<tr>
+					<td>
+					
+					<input name="strumento" type="checkbox" id="Spatola" value="Spatola">
+					<label for="Spatola">Spatola</label>
+
+					</td>
+					<td>
+
+					<input name="strumento" type="checkbox" id="Bowl" value="Bowl">
+					<label for="Bowl">Bowl</label>
+				
+					</td>
+					<td>
+
+					<input name="strumento" type="checkbox" id="Cestello bambù" value="Cestello bambù">
+					<label for="Cestello bambù">Cestello bambù</label>
+			
+					</td>
+				</tr>
+				<tr>
+					<td>
+			
+					<input name="strumento" type="checkbox" id="Termometro digitale" value="Termometro digitale">
+					<label for="Termometro digitale">Termometro digitale</label>
+				
+					</td>
+					<td>
+
+					<input name="strumento" type="checkbox" id="Planetaria" value="Planetaria">
+					<label for="Planetaria">Planetaria</label>
+
+					</td>
+					<td>
+
+					<input name="strumento" type="checkbox" id="Microonde" value="Microonde">
+					<label for="Microonde">Microonde</label>
+				
+					</td>
+				</tr>
+				<tr>
+					<td>
+					
+					<input name="strumento" type="checkbox" id="Padella" value="Padella">
+					<label for="Padella">Padella</label>
+
+					</td>
+					<td>
+				
+					<input name="strumento" type="checkbox" id="Wok" value="Wok">
+					<label for="Wok">Wok</label>
+
+					</td>
+					<td>
+
+					<input name="strumento" type="checkbox" id="Pentola" value="Pentola">
+					<label for="Pentola">Pentola</label>
+
+					</td>
+				</tr>
+				<tr>
+					<td>
+					
+					<input name="strumento" type="checkbox" id="Griglia" value="Griglia">
+					<label for="Griglia">Griglia</label>
+
+					</td>
+					<td>
+					<input name="strumento" type="checkbox" id="Forno" value="Forno">
+					<label for="Forno">Forno</label>
+
+					</td>
+
+					</td>
+					<td>
+				</tr>
+			</table>
+		
+            
+        </p>
+			
+			<p>
+                <label for="Procedimento">Procedimento del piatto:</label><br><br>
+                <textarea id="Procedimento" name="Procedimento" placeholder="Inserisci il procedimento del piatto"></textarea>
+            </p>
+
+			<p>
+                <label for="Temperatura di conservazione">Temperatura di conservazione:</label><br><br>
+                <textarea id="Temperatura di conservazione" name="T_cons" placeholder="Inserisci la temperatura di conservazionedel piatto"></textarea>
+            </p>
+			<p>
+                <label for="Data di scadenza">Data di scadenza:</label><br><br>
+                <textarea id="Data di scadenza" name="d_expired" placeholder="Inserisci la data di scadenza del piatto"></textarea>
+            </p>
+					
+			<p>
+                <label for="Valori nutrizionali">Valori nutrizionali del piatto:</label><br><br>
+                <textarea id="Valori nutrizionali" name="nutrition" placeholder="Inserisci i valori nutrizionali del piatto"></textarea>
+            </p>
+			<input type="submit">
+	</form>
+			
+</body>
+</html>
