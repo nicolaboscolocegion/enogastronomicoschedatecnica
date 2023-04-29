@@ -33,7 +33,7 @@
 
 			<?php
 			$strumento = $_POST['strumento']; // prendo i dati dal form
-				// Altrimenti itero sugli elementi dell'array, e stampo il valore:
+				// iterazione su tutti gli elementi
 				for($i = 0; $i < count($strumento); $i++) {
 					echo($strumento[$i] . '<br>');
 				}
