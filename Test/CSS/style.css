@@ -1,0 +1,106 @@
+/* Stile della pagina */
+body {
+  background: linear-gradient(to bottom right, #8a2be2, #4169e1);
+  margin: 0;
+  padding: 0;
+}
+
+/* Centratura del contenuto della pagina */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+/* Stile del form */
+.register-form {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 40px;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  animation: formScale 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+/* animazione di ingrandimento */
+@keyframes formScale {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Stile del titolo del form */
+.register-form h2 {
+  font-family: Arial, sans-serif;
+  color: #333;
+  animation: formScale 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+
+/* Stile del campo di input del form */
+.register-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: none;
+  font-size: 16px;
+  animation: formScale 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+.register-form textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: none;
+  font-size: 16px;
+  animation: formScale 0.5s ease;
+  animation-fill-mode: forwards;
+  resize: none;
+
+}
+
+/* Stile del campo di input del form */
+.register-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: none;
+  font-size: 16px;
+  animation: formScale 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+
+ /* Stile di login */
+.login-form p {
+  font-family: Arial, sans-serif;
+  color: #333;
+  animation: formScale 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+/* pulsante di invio del form */
+.register-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4169e1;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  animation: formScale 0.5s ease;
+  animation-fill-mode: forwards;
+}
