@@ -1,18 +1,25 @@
-<html>
-
-
+<!DOCTYPE html>
+<html lang="it">
 	<head>
-
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="CSS/styletable.css">
+		<link rel="icon" href="img/logo.png">
+		<title><?php echo $_POST["Nome_piatto"]; ?></title>
+		
 	</head>
 	
 	
 	<body>
 	
-	<table></table>
-		<tr><td>Nome piatto</td>
-			<td>  <?php echo $_POST["Nome_piatto"]; ?> </td></tr>
+	<div class="container">
+	<table>
+		<thead>
+		<tr><th style="width:30%">Nome piatto</th>
+			<th>  <?php echo $_POST["Nome_piatto"]; ?> </th></tr>
+		</thead>
 
+		<tbody>
 		<tr><td>Pax</td>
 			<td> <?php echo $_POST["Pax"]; ?></td></tr>
 			
@@ -57,10 +64,10 @@
 
 		<tr><td>Valori nutrizionali del piatto</td>
 			<td> <?php echo $_POST["nutrition"]; ?></td></tr>
-		
+		</tbody>
 	</table>
 		
-
+	</div>
 
 
 	
