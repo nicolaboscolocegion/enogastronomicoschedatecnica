@@ -24,7 +24,7 @@
 			<td> <?php echo $_POST["Pax"]; ?></td></tr>
 			
 			<tr><td>Tempo preparazione</td>
-				<td><?php echo $_POST["t_prep"]; ?> </td></tr>
+				<td><?php echo $_POST['t_prep']. ' ore';?> </td></tr>
 
 		<tr><td>Descrizione del piatto</td>
 			<td><?php echo $_POST["descrizione"]; ?> </td></tr>
@@ -57,7 +57,7 @@
 			<td><?php echo $_POST["Procedimento"]; ?> </td></tr>
 
 		<tr><td>Temperatura di conservazione</td>	
-			<td><?php echo $_POST["T_cons"]; ?> </td></tr>
+			<td><?php echo $_POST["T_cons"].' °C'; ?>  </td></tr>
 
 		<tr><td>Data di scadenza</td>
 			<td><?php echo $_POST["d_expired"]; ?> </td></tr>

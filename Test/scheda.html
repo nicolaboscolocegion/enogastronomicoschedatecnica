@@ -16,22 +16,22 @@
 			
 	<div class="register-form" >
 				<h2>Scheda tecnica</h2>
-			<form name="invio-dati" method="post" action="tabella.php">
+			<form name="invio-dati" method="post" action="tabella.php" >
 				
 				
 				<p>
 					<label for="nome_piatto">Nome del piatto:</label>
-					<input name="Nome_piatto" id="nome_piatto">
+					<input style="text-align: center;" name="Nome_piatto" id="nome_piatto">
 				</p>
 				
 				<p>
-					<label for="t_prep">Tempo di preparazione:</label>
-					<input style="width: 50%;" type="time" id="t_prep" neme="t_prep">
+					<label for="Tprep">Tempo di preparazione:</label>
+					<input style="width: 30%; text-align: center;" class="without_ampm" type="time" name="t_prep" id="Tprep"  required >   ore:min
 				</p>
 				
 				<p>
 					<label for="Pax">Pax:</label>
-					<input style="width: 50%;" type="number" id="Pax" name="Pax" >
+					<input style="width: 30%; text-align: center;" type="number" id="Pax" name="Pax" >
 				</p>
 				
 				<p>
@@ -262,18 +262,18 @@
 
 				<p>
 					<label for="Temperatura di conservazione">Temperatura di conservazione:</label><br><br>
-					<input style="width: 50%;" type="number" id="Temperatura di conservazione" name="T_cons" placeholder="temp di conservazione"> °C
+					<input style="width: 20%; text-align: center;" type="number" id="Temperatura di conservazione" name="T_cons" > °C
 				</p>
 				<p>
 					<label for="Data di scadenza">Data di scadenza:</label><br><br>
-					<input style="width: 50%;" type="date" id="Data di scadenza" name="d_expired" placeholder="Inserisci la data di scadenza del piatto"></textarea>
+					<input style="width: 35%; text-align: center;" type="date" id="Data di scadenza" name="d_expired" placeholder="Inserisci la data di scadenza del piatto"></textarea>
 				</p>
 						
 				<p>
 					<label for="Valori nutrizionali">Valori nutrizionali del piatto:</label><br><br>
 					<textarea id="Valori nutrizionali" name="nutrition" placeholder="Inserisci i valori nutrizionali del piatto"></textarea>
 				</p>
-				<input type="submit">
+				<input type="submit" value="Send data">
 		</form>
 	
 	</div>
